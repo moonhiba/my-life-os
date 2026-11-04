@@ -1,14 +1,47 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>🌸 MY LIFE OS</title><style>
 :root{font-family:system-ui,-apple-system,'Malgun Gothic',sans-serif;color:#553e4d;background:#fff8fb}*{box-sizing:border-box}body{margin:0}header{padding:20px 5%;background:linear-gradient(110deg,#f6bfd8,#ffe5ef);display:flex;justify-content:space-between;align-items:center;gap:12px}h1{font-size:25px;margin:0}small,.muted{color:#907587}main{max-width:1200px;margin:auto;padding:22px 16px}.card{background:#fff;border:1px solid #f2d8e5;border-radius:18px;padding:20px;margin:14px 0;box-shadow:0 4px 16px #ab789011}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs button{border-radius:20px}.tabs .on{background:#c96f9b;color:white}button{cursor:pointer;background:#f8e0eb;color:#744b64;border:0;border-radius:9px;padding:10px 14px;font-weight:600}button.primary{background:#bd6490;color:white}button:disabled{opacity:.5}input,select{font:inherit;border:1px solid #eacbdc;border-radius:9px;padding:10px;max-width:100%}input[type=checkbox]{accent-color:#bf6792}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.row>*{min-width:0}.grow{flex:1}.hidden{display:none!important}.grid81{display:grid;grid-template-columns:repeat(9,minmax(65px,1fr));gap:3px;min-width:630px}.cell{font-size:11px;min-height:67px;padding:5px;border:1px solid #f4d4e2;background:#fff0f6;white-space:normal;overflow-wrap:anywhere;border-radius:4px}.cell.center{background:#f3bad3;font-weight:700}.cell.vision{background:#dd88b0;color:#fff;font-weight:800}.scroll{overflow-x:auto}.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat>div{background:#fff0f6;padding:16px;border-radius:12px}.stat b{display:block;font-size:23px}.task{padding:12px 0;border-bottom:1px solid #f5e6ed}.task:last-child{border:0}.pill{font-size:12px;background:#f7e1ec;padding:4px 8px;border-radius:20px}#status{font-size:12px}.error{color:#ac3157}.success{color:#367a5c}@media(max-width:650px){header{padding:16px}h1{font-size:20px}.stat{grid-template-columns:1fr 1fr}.card{padding:14px}.row input[type=text]{width:100%}}
- .timer-display{font-size:clamp(55px,12vw,100px);font-weight:800;text-align:center;font-variant-numeric:tabular-nums;color:#b65f8b}.bar{height:12px;background:#f7e4ee;border-radius:20px;overflow:hidden}.bar>i{display:block;background:#c779a2;height:100%}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.day{padding:8px 2px;text-align:center;min-height:64px;border:1px solid #f1d7e5;border-radius:9px;background:#fff}.day.active{background:#ffe6f0}.day small{display:block}.weekchart{display:flex;align-items:end;gap:8px;height:150px}.weekchart>div{flex:1;text-align:center;font-size:12px}.weekchart .column{background:#d88bad;border-radius:6px 6px 0 0;min-height:2px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:650px){.two{grid-template-columns:1fr}.calendar{gap:2px}.day{font-size:12px;min-height:53px}} </style></head><body><header><div><h1>🌸 MY LIFE OS</h1><small>일도 잘하고, 나도 잘 돌보는 삶</small></div><div class="row"><span id="userLabel"></span><button id="logout" class="hidden">로그아웃</button></div></header><main>
+ .timer-display{font-size:clamp(55px,12vw,100px);font-weight:800;text-align:center;font-variant-numeric:tabular-nums;color:#b65f8b}.bar{height:12px;background:#f7e4ee;border-radius:20px;overflow:hidden}.bar>i{display:block;background:#c779a2;height:100%}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.day{padding:8px 2px;text-align:center;min-height:64px;border:1px solid #f1d7e5;border-radius:9px;background:#fff}.day.active{background:#ffe6f0}.day small{display:block}.weekchart{display:flex;align-items:end;gap:8px;height:150px}.weekchart>div{flex:1;text-align:center;font-size:12px}.weekchart .column{background:#d88bad;border-radius:6px 6px 0 0;min-height:2px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:650px){.two{grid-template-columns:1fr}.calendar{gap:2px}.day{font-size:12px;min-height:53px}} 
+/* MY LIFE OS v5 - pink planner dashboard */
+body:has(#app.hidden) .tabs{display:none}
+body{background:#fcf9fb;color:#29232a}header{background:#fff;border-bottom:1px solid #f3e7ed;padding:13px max(16px,calc((100% - 780px)/2))}header h1{font-size:18px}header small{font-size:11px}main{max-width:800px;padding:18px 16px 105px}.card{border:1px solid #eee6eb;box-shadow:0 3px 18px #6540560a;border-radius:22px}.hero{padding:27px 23px 22px;background:#faedf3;border-radius:23px;margin:5px 0 14px}.hero-brand{font-size:17px;font-weight:800;color:#a95680}.hero h2{font-size:clamp(23px,5vw,33px);margin:15px 0 7px;letter-spacing:-1px}.hero p{margin:0;color:#8b7984;font-weight:600}.home-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric{background:#f3f1f2;border-radius:20px;padding:20px 17px;min-height:132px}.metric>span{display:block;color:#756e74;font-size:15px;font-weight:600}.metric strong{display:block;font-size:clamp(24px,5.5vw,36px);letter-spacing:-1px;margin:9px 0;color:#211d21}.metric small{color:#81767e;font-size:12px}.metric small span{display:inline;font-size:inherit}.tabs{position:fixed;bottom:0;left:0;right:0;z-index:50;background:#fff;border:0;border-top:1px solid #eee5e9;box-shadow:0 -3px 18px #5b405010;border-radius:0;margin:0!important;padding:9px max(8px,calc((100% - 780px)/2)) 12px;display:flex;justify-content:space-around;gap:1px;flex-wrap:nowrap}.tabs button{flex:1;padding:8px 2px;background:transparent;border-radius:12px;font-size:12px;color:#827780;white-space:normal}.tabs button.on{background:#fae8f0;color:#a7507e}.tabs button[data-tab=tasks]{font-weight:800}#homeTimer>.card{margin:14px 0}#homeTimer h2{font-size:19px}#homeTimer .timer-display{font-size:clamp(58px,13vw,86px);font-weight:600;color:#2d252b;margin:18px 0}#homeTimer .row{justify-content:center}#homeTimer button.primary{background:#bd6490}#homeTimer select{max-width:100%;font-size:13px}#homeTimer .muted{font-size:12px}@media(max-width:650px){header{padding:12px 16px}main{padding:12px 14px 105px}.hero{padding:23px 19px}.metric{padding:16px 14px;min-height:120px}.metric>span{font-size:13px}.tabs button{font-size:11px}.card{padding:17px}}
+</style>
+<style>
+/* v6 calendar and finance */
+.calendar{gap:7px;margin-top:18px}.day{min-height:80px;border-radius:15px;background:#fffafc;border:1px solid #f3dce7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:.15s}.day:hover{background:#fff0f6;transform:translateY(-1px)}.day.active{background:#d678a5;color:white;border-color:#d678a5;box-shadow:0 4px 14px #d678a544}.day.today:not(.active){border:2px solid #c26a96;background:#fff0f7}.day .dot{width:6px;height:6px;border-radius:50%;background:#ce78a1;display:inline-block}.day.active .dot{background:white}.calendar-weekday{text-align:center;color:#a96a8d;font-size:13px;font-weight:700;padding:8px 0}.calendar-weekday:first-child{color:#d46b83}.calendar-weekday:nth-child(7){color:#7d8bb9}.calendar-header{background:linear-gradient(110deg,#fbe5f0,#fff5f9);border-radius:17px;padding:14px}.finance-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}.finance-tabs button.active{background:#bb6591;color:white}.finance-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.finance-metric{padding:16px;background:#fff0f6;border-radius:15px}.finance-metric b{display:block;font-size:20px;margin-top:8px;overflow-wrap:anywhere}.finance-table{width:100%;border-collapse:collapse;font-size:13px}.finance-table th,.finance-table td{padding:10px 7px;text-align:left;border-bottom:1px solid #f1e1e9}.finance-table th{background:#fff0f6}.finance-table td:last-child{text-align:right}.finance-scroll{overflow:auto}.finance-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.finance-form label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#8e607a}.finance-form label input,.finance-form label select{width:100%}.finance-form .wide{grid-column:1/-1}.finance-amount{font-variant-numeric:tabular-nums}.session-check{width:18px;height:18px}.session-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.finance-bar{height:9px;background:#f9e3ed;border-radius:10px;overflow:hidden}.finance-bar i{display:block;height:100%;background:#c9759f}.subtle{font-size:12px;color:#95788a}@media(max-width:550px){.day{min-height:59px;font-size:12px}.calendar{gap:3px}.finance-metric b{font-size:17px}header #userLabel{font-size:10px;max-width:130px;overflow:hidden;text-overflow:ellipsis}.tabs button{font-size:10px}}
+</style>
+<script src="https://accounts.google.com/gsi/client" async defer></script><style>#googlePanel .row{flex-wrap:wrap}#googleClientId{min-width:200px}#googleEventList .task{margin:7px 0}.google-dot{background:#4285f4!important}</style></head><body><header><div><h1>🌸 MY LIFE OS</h1><small>일도 잘하고, 나도 잘 돌보는 삶</small></div><div class="row"><span id="userLabel"></span><button id="logout" class="hidden">로그아웃</button></div></header><main>
 <section id="setup" class="card hidden"><h2>🔗 Supabase 연결 설정</h2><p class="muted">MY LIFE OS 전용 Supabase 연결 정보가 기본 설정되어 있습니다. Secret / service_role 키는 절대 입력하지 마세요.</p><div class="row"><input id="url" class="grow" placeholder="https://프로젝트.supabase.co"><input id="key" class="grow" placeholder="sb_publishable_... 또는 anon 키"><button id="connect" class="primary">연결</button></div><p id="setupInfo" class="muted">연결 전에는 데이터가 저장되지 않습니다.</p></section>
 <section id="auth" class="card"><h2>🔐 개인 로그인</h2><div class="row"><input id="email" type="email" autocomplete="email" placeholder="이메일"><input id="password" type="password" autocomplete="current-password" placeholder="비밀번호"><button id="login" class="primary">로그인</button><button id="signup">회원가입</button></div><p class="muted">회원가입 후 이메일 확인이 필요할 수 있습니다.</p></section>
-<section id="app" class="hidden"><div class="tabs card"><button data-tab="home" class="on">🏠 홈</button><button data-tab="goals">🌸 만다라트 81칸</button><button data-tab="tasks">✅ 할 일</button><button data-tab="focus">⏱️ 집중</button><button data-tab="calendar">📅 달력</button><button data-tab="stats">📊 통계</button></div><section id="home" class="page"><div class="card"><h2>오늘의 대시보드</h2><div class="stat"><div>전체 업무<b id="total">0</b></div><div>완료 업무<b id="completed">0</b></div><div>업무 달성률<b id="rate">0%</b></div></div></div><div class="card"><h3>오늘까지 마감인 미완료 업무</h3><div id="today"></div></div></section>
+<section id="app" class="hidden"><div class="tabs card"><button data-tab="home" class="on">🏠 홈</button><button data-tab="goals">🌸 만다라트 81칸</button><button data-tab="tasks">✅ 할 일</button><button data-tab="focus">⏱️ 집중</button><button data-tab="calendar">📅 달력</button><button data-tab="stats">📊 통계</button><button data-tab="finance">💗 가계부</button></div><section id="home" class="page"><div class="hero"><div class="hero-brand">🌸 MY LIFE OS</div><h2>오늘도 나를 위한 하루</h2><p>나의 목표 · 오늘의 실행 · 성장 기록</p></div><div class="home-metrics"><div class="metric"><span>오늘의 집중</span><strong id="homeFocus">0분</strong><small>실제 집중 기록</small></div><div class="metric"><span>할 일 달성률</span><strong id="rate">0%</strong><small><span id="completed">0</span> / <span id="total">0</span>개 완료</small></div></div><div id="homeTimer"></div><div class="card"><h3>오늘의 할 일</h3><div id="today"></div><button class="primary" type="button" id="goTasks">＋ 할 일 등록하기</button></div></section>
 <section id="goals" class="page hidden"><div class="card"><h2>🌸 81칸 만다라트</h2><p class="muted">칸을 클릭해 목표를 수정할 수 있습니다. 가운데 진한 분홍색 칸은 최종 비전입니다.</p><div class="scroll"><div class="grid81" id="goalGrid"></div></div></div><div class="card hidden" id="goalEditor"><h3>목표 수정 <span id="slotLabel"></span></h3><div class="row"><input id="goalTitle" class="grow" maxlength="150"><button id="saveGoal" class="primary">저장</button><button id="cancelGoal">닫기</button></div><p id="goalProgress" class="muted"></p></div></section>
 <section id="tasks" class="page hidden"><div class="card"><h2>✅ 할 일 추가</h2><form id="taskForm" class="row"><input id="taskTitle" class="grow" placeholder="할 일을 입력하세요" required maxlength="200"><input id="taskDue" type="date"><select id="taskPriority"><option>보통</option><option>높음</option><option>낮음</option></select><select id="taskGoal"><option value="">목표 연결 안 함</option></select><button class="primary">추가</button></form></div><div class="card"><h3>나의 업무 목록</h3><div id="taskList"></div></div></section>
-<section id="focus" class="page hidden"><div class="card"><h2>⏱️ 집중 타이머</h2><div class="row"><select id="focusPreset"><option value="1500">25분 집중</option><option value="3000">50분 집중</option><option value="300">5분 휴식</option><option value="600">10분 휴식</option></select><select id="focusGoal"><option value="">목표 연결 안 함</option></select><select id="focusTask"><option value="">할 일 연결 안 함</option></select></div><div id="timerDisplay" class="timer-display">25:00</div><div class="row" style="justify-content:center"><button class="primary" id="timerStart">시작</button><button id="timerPause">일시정지</button><button id="timerFinish">종료·기록</button><button id="timerReset">초기화</button></div><p class="muted">실제로 집중한 시간만 기록합니다. 다른 앱으로 이동해도 경과 시간을 계산하며, 실행 중에는 이 브라우저 탭을 닫지 마세요. 휴식 시간은 집중 통계에서 제외됩니다.</p></div><div class="card"><h3>최근 집중 기록</h3><div id="sessionList"></div></div></section>
-<section id="calendar" class="page hidden"><div class="card"><div class="row"><h2 class="grow">📅 월간 달력</h2><button id="prevMonth">◀</button><b id="monthTitle"></b><button id="nextMonth">▶</button></div><div class="calendar" id="calendarGrid"></div><p class="muted">날짜를 선택하면 해당 날짜의 할 일과 집중 기록을 확인할 수 있어요.</p><div id="calendarDetail"></div></div></section>
+<section id="focus" class="page hidden"><div class="card"><h3>나의 집중 기록</h3><p class="muted">집중 타이머는 홈에서 사용할 수 있어요.</p><button type="button" id="goHomeTimer" class="primary">홈 타이머로 이동</button></div><div class="card"><h2>⏱️ 집중 타이머</h2><div class="row"><select id="focusPreset"><option value="1500">25분 집중</option><option value="3000">50분 집중</option><option value="300">5분 휴식</option><option value="600">10분 휴식</option></select><select id="focusGoal"><option value="">목표 연결 안 함</option></select><select id="focusTask"><option value="">할 일 연결 안 함</option></select></div><div id="timerDisplay" class="timer-display">25:00</div><div class="row" style="justify-content:center"><button class="primary" id="timerStart">시작</button><button id="timerPause">일시정지</button><button id="timerFinish">종료·기록</button><button id="timerReset">초기화</button></div><p class="muted">실제로 집중한 시간만 기록합니다. 다른 앱으로 이동해도 경과 시간을 계산하며, 실행 중에는 이 브라우저 탭을 닫지 마세요. 휴식 시간은 집중 통계에서 제외됩니다.</p></div><div class="card"><h3>최근 집중 기록</h3><div class="session-tools"><label><input type="checkbox" id="sessionAll"> 전체 선택</label><button id="sessionDelete">선택 기록 삭제</button><span class="subtle">삭제하면 달력·통계에도 반영돼요.</span></div><div id="sessionList"></div></div></section>
+<section id="calendar" class="page hidden"><div class="card" id="googlePanel"><h3>🌐 구글 캘린더 양방향 연동</h3><p class="muted">구글 계정의 기본 캘린더와 연결해 일정을 불러오고, 여기에서 추가·수정·삭제할 수 있어요.</p><div class="row"><input id="googleClientId" class="grow" placeholder="Google OAuth 웹 클라이언트 ID" aria-label="Google OAuth 클라이언트 ID"><button id="googleSaveClient">설정 저장</button></div><p class="subtle">Google Cloud에서 Calendar API를 켜고, OAuth 웹 애플리케이션의 승인된 JavaScript 원본에 실제 접속 주소를 등록하세요. HTML 파일을 더블클릭한 file:// 주소에서는 연결할 수 없어요.</p><div class="row"><button id="googleConnect" class="primary">구글 계정 연결</button><button id="googleRefresh">일정 새로고침</button><button id="googleDisconnect">연결 해제</button></div><p id="googleStatus" class="subtle">연결되지 않았어요.</p><h3>구글 일정 추가 / 수정</h3><form id="googleEventForm" class="finance-form"><input id="googleEventId" type="hidden"><label class="wide">일정 제목<input id="googleEventTitle" required placeholder="예: 병원 방문"></label><label>시작 날짜·시간<input id="googleEventStart" type="datetime-local" required></label><label>종료 날짜·시간<input id="googleEventEnd" type="datetime-local" required></label><label class="wide">설명<input id="googleEventDescription" placeholder="메모 (선택)"></label><button class="primary wide" type="submit">구글 캘린더에 일정 저장</button><button id="googleEventCancel" class="wide" type="button">수정 취소 / 새 일정</button></form><h3>선택한 달의 구글 일정</h3><div id="googleEventList"></div></div><div class="card"><div class="row calendar-header"><h2 class="grow">🌷 나의 월간 플래너</h2><button id="prevMonth">◀</button><b id="monthTitle"></b><button id="nextMonth">▶</button><button id="todayMonth">오늘</button></div><div class="calendar" id="calendarGrid"></div><p class="muted">날짜를 선택하면 해당 날짜의 할 일과 집중 기록을 확인할 수 있어요.</p><div id="calendarDetail"></div></div></section>
 <section id="stats" class="page hidden"><div class="card"><h2>📊 나의 실행 통계</h2><div class="stat"><div>오늘 집중<b id="focusToday">0분</b></div><div>최근 7일<b id="focusWeek">0분</b></div><div>전체 집중<b id="focusAll">0분</b></div></div><h3>최근 7일 집중 시간</h3><div id="weekChart" class="weekchart"></div></div><div class="card"><h3>목표별 집중 시간</h3><div id="goalStats"></div></div></section>
+
+<section id="finance" class="page hidden">
+<div class="card"><h2>💗 나의 자산 플래너</h2><p class="muted">수입 · 지출 · 정기 지출 · 자산 · 월별 예산을 한눈에 관리해요.</p>
+<div class="row"><button id="finPrev">◀</button><b id="finMonthTitle"></b><button id="finNext">▶</button></div>
+<div class="finance-metrics">
+<div class="finance-metric">💚 이번 달 수입<b id="finIncome">0원</b></div><div class="finance-metric">🌷 이번 달 지출<b id="finExpense">0원</b></div>
+<div class="finance-metric">💰 월간 수지<b id="finBalance">0원</b></div><div class="finance-metric">💎 순자산<b id="finAssets">0원</b></div></div>
+<p class="subtle">순자산은 자산 현황에 등록한 계좌·현금·부채 금액의 합계예요. 부채는 음수로 입력하세요.</p>
+<div class="finance-tabs" id="finTabs"><button data-fin="entries" class="active">수입·지출</button><button data-fin="recurring">정기 지출</button><button data-fin="assets">자산 현황</button><button data-fin="budgets">예산 분석</button></div>
+<div id="finEntriesPane">
+<h3>✏️ 수입·지출 등록</h3><form id="finEntryForm" class="finance-form">
+<label>날짜<input id="finDate" type="date" required></label>
+<label>구분<select id="finKind"><option value="expense">지출</option><option value="income">수입</option></select></label>
+<label class="wide">내용<input id="finTitle" maxlength="150" placeholder="예: 점심 식사" required></label>
+<label>금액 (원)<input id="finAmount" type="number" min="0" step="1" required></label>
+<label>카테고리<select id="finCategory"><option>식비</option><option>주거비</option><option>보험</option><option>통신비</option><option>교통비</option><option>가족</option><option>여행·취미</option><option>경조사비</option><option>의료비</option><option>급여</option><option>부수입</option><option>저축</option><option>기타</option></select></label>
+<label>결제 수단<input id="finPayment" placeholder="카드 / 현금 / 이체"></label>
+<label>계좌·입금처<input id="finAccount" placeholder="예: 카카오뱅크"></label>
+<label class="wide">메모<input id="finMemo" maxlength="500" placeholder="선택 사항"></label>
+<button class="primary wide" type="submit">＋ 거래 저장</button></form><h3>이번 달 거래 내역</h3><div id="finEntryList" class="finance-scroll"></div></div>
+<div id="finRecurringPane" class="hidden"><h3>📅 매월 정기 지출</h3><p class="subtle">등록된 정기 지출은 매달 예정액으로 표시돼요. 납부했다면 '지출로 기록'을 눌러 실제 지출 내역에 저장하세요.</p><form id="finRecurringForm" class="finance-form"><label class="wide">항목<input id="recTitle" required placeholder="예: 휴대폰 요금"></label><label>매월 납부일<input id="recDay" type="number" min="1" max="31" value="15" required></label><label>금액<input id="recAmount" type="number" min="0" required></label><label>카테고리<select id="recCategory"><option>고정비</option><option>보험</option><option>통신비</option><option>주거비</option><option>가족</option><option>저축</option><option>기타</option></select></label><label>출금 계좌<input id="recAccount" placeholder="선택 사항"></label><button class="primary wide">＋ 정기 지출 추가</button></form><h3>정기 지출 목록</h3><div id="recList"></div></div>
+<div id="finAssetsPane" class="hidden"><h3>💎 자산·부채 현황</h3><p class="subtle">잔액을 직접 등록하고 변경 시 새 금액으로 수정할 수 있어요. 부채는 음수로 입력하세요.</p><form id="finAssetForm" class="finance-form"><label class="wide">계좌·자산 이름<input id="assetTitle" required placeholder="예: 카카오뱅크 예적금"></label><label>금액 (부채는 음수)<input id="assetAmount" type="number" step="1" required></label><label>구분<select id="assetCategory"><option>은행</option><option>증권</option><option>현금</option><option>부채</option><option>기타</option></select></label><button class="primary wide">＋ 자산 등록</button></form><h3>나의 자산 목록</h3><div id="assetList"></div></div>
+<div id="finBudgetsPane" class="hidden"><h3>📊 카테고리별 월간 예산</h3><form id="finBudgetForm" class="finance-form"><label>카테고리<input id="budgetCategory" list="budgetSuggestions" placeholder="예: 식비" required><datalist id="budgetSuggestions"><option value="식비"><option value="주거비"><option value="보험"><option value="통신비"><option value="교통비"><option value="가족"><option value="여행·취미"><option value="경조사비"><option value="의료비"></datalist></label><label>월 예산 (원)<input id="budgetAmount" type="number" min="0" required></label><button class="primary wide">예산 저장 / 수정</button></form><div id="budgetList"></div></div>
+</div></section>
 </section><p id="status" role="status" aria-live="polite"></p></main>
 <script type="module">
 import {createClient} from 'https://esm.sh/@supabase/supabase-js@2.95.0';
@@ -16,7 +49,13 @@ const URL='https://swymbizxrwximlfevgfx.supabase.co';
 const KEY='sb_publishable_0v0M8ZTtNESAJ9d_1hOzdQ_f1eNok1-';
 const db=createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true}});
 const $=id=>document.getElementById(id);
-let user=null,goals=[],tasks=[],sessions=[],selected=null,loading=false;
+// Place the functional timer on the home dashboard.
+const timerCard=document.querySelector('#focus > .card');
+if(timerCard)document.getElementById('homeTimer').appendChild(timerCard);
+document.getElementById('goTasks').addEventListener('click',()=>document.querySelector('[data-tab="tasks"]').click());
+document.getElementById('goHomeTimer').addEventListener('click',()=>{document.querySelector('[data-tab="home"]').click();document.getElementById('homeTimer').scrollIntoView({behavior:'smooth',block:'center'});});
+
+let user=null,goals=[],tasks=[],sessions=[],selected=null,loading=false;let googleEvents=[],googleToken=null,googleTokenClient=null,googleTokenExpiry=0;let financeEntries=[],financeBudgets=[],financeRecurring=[],finCursor=new Date(),finPane='entries';
 let timer={running:false,elapsed:0,started:0,modeSeconds:1500,startedAt:null},ticker=null,monthCursor=new Date(),selectedDay=null;
 const pad=n=>String(n).padStart(2,'0');const localDay=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const durationText=n=>n>=3600?`${Math.floor(n/3600)}시간 ${Math.floor(n%3600/60)}분`:`${Math.floor(n/60)}분`;
@@ -30,9 +69,9 @@ function titleAt(s){return findGoal(s)?.title||slotInfo[s].title}
 function msg(t,bad=false){$('status').textContent=t;$('status').className=bad?'error':'success'}
 function esc(t){return String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 async function call(p){const {data,error}=await p;if(error)throw error;return data}
-async function load(){if(!user||loading)return;loading=true;try{goals=await call(db.from('goals').select('*').order('level').order('position'));tasks=await call(db.from('tasks').select('*').order('created_at',{ascending:false}));sessions=await call(db.from('focus_sessions').select('*').order('ended_at',{ascending:false}).limit(1000));render();msg('서버 데이터 동기화 완료')}catch(e){msg('서버 조회 실패: '+e.message,true)}finally{loading=false}}
+async function load(){if(!user||loading)return;loading=true;try{goals=await call(db.from('goals').select('*').order('level').order('position'));tasks=await call(db.from('tasks').select('*').order('created_at',{ascending:false}));sessions=await call(db.from('focus_sessions').select('*').order('ended_at',{ascending:false}).limit(1000));await loadFinance();render();renderFinance();msg('서버 데이터 동기화 완료')}catch(e){msg('서버 조회 실패: '+e.message,true)}finally{loading=false}}
 async function seed(){if(goals.length)return;const uid=user.id;let root=await call(db.from('goals').insert({user_id:uid,title:'일과 삶의 균형',level:0,position:0}).select().single());let cores=await call(db.from('goals').insert(domains.map((title,position)=>({user_id:uid,title,level:1,position,parent_id:root.id}))).select());let children=[];for(let i=0;i<8;i++)for(let j=0;j<8;j++)children.push({user_id:uid,title:detail[i][j],level:2,position:j,parent_id:cores.find(g=>g.position===i).id});await call(db.from('goals').insert(children));await load()}
-async function syncUser(u){let changed=user?.id!==u?.id;user=u;$('auth').classList.toggle('hidden',!!u);$('app').classList.toggle('hidden',!u);$('logout').classList.toggle('hidden',!u);$('userLabel').textContent=u?.email||'';if(!u){goals=[];tasks=[];sessions=[];stopTimer();return}if(changed){await load();if(goals.length===0){try{await seed()}catch(e){msg('초기 목표 생성 실패: '+e.message,true)}}}}
+async function syncUser(u){let changed=user?.id!==u?.id;user=u;$('auth').classList.toggle('hidden',!!u);$('app').classList.toggle('hidden',!u);$('logout').classList.toggle('hidden',!u);$('userLabel').textContent=u?.email||'';if(!u){goals=[];tasks=[];sessions=[];financeEntries=[];financeBudgets=[];financeRecurring=[];stopTimer();return}if(changed){await load();if(goals.length===0){try{await seed()}catch(e){msg('초기 목표 생성 실패: '+e.message,true)}}}}
 function render(){const grid=$('goalGrid');grid.replaceChildren();for(let i=0;i<81;i++){let b=document.createElement('button');b.className='cell'+(i===40?' vision':i%9%3===1&&Math.floor(i/9)%3===1?' center':'');b.textContent=titleAt(i);b.title=`${i+1}번 목표 수정`;b.onclick=()=>editGoal(i);grid.append(b)}let s=$('taskGoal'),old=s.value;s.innerHTML='<option value="">목표 연결 안 함</option>'+slotInfo.filter(x=>x.level===2).map(x=>`<option value="${findGoal(x.slot)?.id||''}">${esc(titleAt(x.slot))}</option>`).join('');s.value=old;let done=tasks.filter(t=>t.status==='done').length;$('total').textContent=tasks.length;$('completed').textContent=done;$('rate').textContent=tasks.length?Math.round(done/tasks.length*100)+'%':'0%';let today=new Date().toLocaleDateString('en-CA');$('today').innerHTML=tasks.filter(t=>t.status!=='done'&&t.due_date&&t.due_date<=today).map(t=>`<div class="task">${esc(t.title)} · ${esc(t.due_date)}</div>`).join('')||'<p class="muted">오늘까지 마감인 미완료 업무가 없습니다.</p>';$('taskList').innerHTML=tasks.map(t=>`<div class="task row"><input type="checkbox" data-check="${t.id}" ${t.status==='done'?'checked':''} aria-label="완료 표시"><span class="grow" style="${t.status==='done'?'text-decoration:line-through;opacity:.55':''}">${esc(t.title)}<br><small>${esc(goals.find(g=>g.id===t.goal_id)?.title||'목표 미연결')} · ${esc(t.due_date||'마감 없음')}</small></span><span class="pill">${esc(t.priority)}</span><button data-del="${t.id}">삭제</button></div>`).join('')||'<p class="muted">등록된 업무가 없습니다.</p>';document.querySelectorAll('[data-check]').forEach(x=>x.onchange=()=>updateTask(x.dataset.check,x.checked));document.querySelectorAll('[data-del]').forEach(x=>x.onclick=()=>deleteTask(x.dataset.del));if(selected!==null)progress();renderExtra()}
 function editGoal(i){selected=i;$('goalEditor').classList.remove('hidden');$('slotLabel').textContent=`#${i+1}`;$('goalTitle').value=titleAt(i);progress();$('goalEditor').scrollIntoView({behavior:'smooth',block:'nearest'})}
 function progress(){let goal=findGoal(selected),related=tasks.filter(t=>t.goal_id===goal?.id),done=related.filter(t=>t.status==='done').length;$('goalProgress').textContent=`직접 연결 업무 ${related.length}개 · 완료 ${done}개 · 진행률 ${related.length?Math.round(done/related.length*100):0}%`}
@@ -57,10 +96,170 @@ async function finishTimer(){const seconds=Math.min(timer.modeSeconds,Math.floor
 $('timerFinish').onclick=finishTimer;
 $('timerReset').onclick=()=>{if(elapsedNow()>0&&!confirm('기록하지 않고 타이머를 초기화할까요?'))return;stopTimer()};
 function renderExtra(){const select=$('focusGoal'),previous=select.value;select.innerHTML='<option value="">목표 연결 안 함</option>'+goals.filter(g=>g.level===2).map(g=>`<option value="${g.id}">${esc(g.title)}</option>`).join('');select.value=previous;const ts=$('focusTask'),prev=ts.value;ts.innerHTML='<option value="">할 일 연결 안 함</option>'+tasks.filter(t=>t.status!=='done').map(t=>`<option value="${t.id}">${esc(t.title)}</option>`).join('');ts.value=prev;
-$('sessionList').innerHTML=sessions.slice(0,15).map(s=>`<div class="task">${s.mode==='break'?'☕ 휴식':'⏱️ 집중'} ${durationText(s.duration_seconds)} · ${esc(goals.find(g=>g.id===s.goal_id)?.title||'목표 미연결')}<br><small>${new Date(s.ended_at).toLocaleString('ko-KR')}</small></div>`).join('')||'<p class="muted">아직 기록이 없어요.</p>';
-const focus=sessions.filter(s=>s.mode==='focus'),today=localDay(new Date()),last7=Array.from({length:7},(_,i)=>{let d=new Date();d.setDate(d.getDate()-(6-i));return localDay(d)});const sum=a=>a.reduce((v,s)=>v+s.duration_seconds,0);$('focusToday').textContent=durationText(sum(focus.filter(s=>localDay(new Date(s.ended_at))===today)));$('focusWeek').textContent=durationText(sum(focus.filter(s=>last7.includes(localDay(new Date(s.ended_at))))));$('focusAll').textContent=durationText(sum(focus));let counts=last7.map(d=>sum(focus.filter(s=>localDay(new Date(s.ended_at))===d))),max=Math.max(...counts,60);$('weekChart').innerHTML=last7.map((d,i)=>`<div><small>${Math.floor(counts[i]/60)}분</small><div class="column" style="height:${Math.max(2,Math.round(counts[i]/max*105))}px"></div><small>${d.slice(5)}</small></div>`).join('');let group={};for(let s of focus){let id=s.goal_id||'none';group[id]=(group[id]||0)+s.duration_seconds}let ranked=Object.entries(group).sort((a,b)=>b[1]-a[1]);let top=ranked[0]?.[1]||1;$('goalStats').innerHTML=ranked.map(([id,sec])=>`<div class="task"><div class="row"><span class="grow">${esc(goals.find(g=>g.id===id)?.title||'목표 미연결')}</span><b>${durationText(sec)}</b></div><div class="bar"><i style="width:${sec/top*100}%"></i></div></div>`).join('')||'<p class="muted">집중 기록이 쌓이면 목표별 통계가 나타나요.</p>';renderCalendar()}
-function renderCalendar(){let y=monthCursor.getFullYear(),m=monthCursor.getMonth(),first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();$('monthTitle').textContent=`${y}년 ${m+1}월`;let html=['일','월','화','수','목','금','토'].map(t=>`<div style="text-align:center"><b>${t}</b></div>`).join('');for(let i=0;i<first;i++)html+='<div></div>';for(let d=1;d<=days;d++){let date=localDay(new Date(y,m,d)),n=tasks.filter(t=>t.due_date===date).length,sec=sessions.filter(s=>s.mode==='focus'&&localDay(new Date(s.ended_at))===date).reduce((v,s)=>v+s.duration_seconds,0);html+=`<button class="day ${selectedDay===date?'active':''}" data-date="${date}">${d}<small>${n?'✓ '+n:''} ${sec?'⏱ '+Math.floor(sec/60)+'분':''}</small></button>`}$('calendarGrid').innerHTML=html;document.querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{selectedDay=b.dataset.date;renderCalendar()});let date=selectedDay||localDay(new Date()),dayTasks=tasks.filter(t=>t.due_date===date),daySessions=sessions.filter(s=>localDay(new Date(s.ended_at))===date);$('calendarDetail').innerHTML=`<h3>${date} 기록</h3>`+dayTasks.map(t=>`<div class="task">${t.status==='done'?'☑':'☐'} ${esc(t.title)}</div>`).join('')+daySessions.map(s=>`<div class="task">${s.mode==='focus'?'⏱️':'☕'} ${durationText(s.duration_seconds)} · ${esc(goals.find(g=>g.id===s.goal_id)?.title||'목표 미연결')}</div>`).join('')+(!dayTasks.length&&!daySessions.length?'<p class="muted">이 날짜에 기록이 없어요.</p>':'')}
-$('prevMonth').onclick=()=>{monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()-1,1);renderCalendar()};$('nextMonth').onclick=()=>{monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()+1,1);renderCalendar()};updateTimer();
+$('sessionList').innerHTML=sessions.map(s=>`<div class="task row"><input class="session-check" type="checkbox" value="${s.id}" aria-label="집중 기록 선택"><div class="grow">${s.mode==='break'?'☕ 휴식':'⏱️ 집중'} ${durationText(s.duration_seconds)} · ${esc(goals.find(g=>g.id===s.goal_id)?.title||'목표 미연결')}<br><small>${new Date(s.ended_at).toLocaleString('ko-KR')}</small></div></div>`).join('')||'<p class="muted">아직 기록이 없어요.</p>';$('sessionAll').checked=false;
+const focus=sessions.filter(s=>s.mode==='focus'),today=localDay(new Date()),last7=Array.from({length:7},(_,i)=>{let d=new Date();d.setDate(d.getDate()-(6-i));return localDay(d)});const sum=a=>a.reduce((v,s)=>v+s.duration_seconds,0);$('focusToday').textContent=durationText(sum(focus.filter(s=>localDay(new Date(s.ended_at))===today)));$('homeFocus').textContent=$('focusToday').textContent;$('focusWeek').textContent=durationText(sum(focus.filter(s=>last7.includes(localDay(new Date(s.ended_at))))));$('focusAll').textContent=durationText(sum(focus));let counts=last7.map(d=>sum(focus.filter(s=>localDay(new Date(s.ended_at))===d))),max=Math.max(...counts,60);$('weekChart').innerHTML=last7.map((d,i)=>`<div><small>${Math.floor(counts[i]/60)}분</small><div class="column" style="height:${Math.max(2,Math.round(counts[i]/max*105))}px"></div><small>${d.slice(5)}</small></div>`).join('');let group={};for(let s of focus){let id=s.goal_id||'none';group[id]=(group[id]||0)+s.duration_seconds}let ranked=Object.entries(group).sort((a,b)=>b[1]-a[1]);let top=ranked[0]?.[1]||1;$('goalStats').innerHTML=ranked.map(([id,sec])=>`<div class="task"><div class="row"><span class="grow">${esc(goals.find(g=>g.id===id)?.title||'목표 미연결')}</span><b>${durationText(sec)}</b></div><div class="bar"><i style="width:${sec/top*100}%"></i></div></div>`).join('')||'<p class="muted">집중 기록이 쌓이면 목표별 통계가 나타나요.</p>';renderCalendar()}
+function renderCalendar(){let y=monthCursor.getFullYear(),m=monthCursor.getMonth(),first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();$('monthTitle').textContent=`${y}년 ${m+1}월`;let html=['일','월','화','수','목','금','토'].map(t=>`<div class="calendar-weekday">${t}</div>`).join('');for(let i=0;i<first;i++)html+='<div></div>';for(let d=1;d<=days;d++){let date=localDay(new Date(y,m,d)),n=tasks.filter(t=>t.due_date===date).length,sec=sessions.filter(s=>s.mode==='focus'&&localDay(new Date(s.ended_at))===date).reduce((v,s)=>v+s.duration_seconds,0);html+=`<button class="day ${selectedDay===date?'active':''} ${date===localDay(new Date())?'today':''}" data-date="${date}"><b>${d}</b><small>${n?'✓ '+n:''} ${sec?'⏱ '+Math.floor(sec/60)+'분':''}</small>${n||sec?'<span class="dot"></span>':''}${googleEvents.some(e=>googleEventDate(e)===date)?'<span class="dot google-dot" title="구글 일정"></span>':''}</button>`}$('calendarGrid').innerHTML=html;document.querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{selectedDay=b.dataset.date;renderCalendar()});let date=selectedDay||localDay(new Date()),dayTasks=tasks.filter(t=>t.due_date===date),daySessions=sessions.filter(s=>localDay(new Date(s.ended_at))===date);$('calendarDetail').innerHTML=`<h3>${date} 기록</h3>`+dayTasks.map(t=>`<div class="task">${t.status==='done'?'☑':'☐'} ${esc(t.title)}</div>`).join('')+daySessions.map(s=>`<div class="task">${s.mode==='focus'?'⏱️':'☕'} ${durationText(s.duration_seconds)} · ${esc(goals.find(g=>g.id===s.goal_id)?.title||'목표 미연결')}</div>`).join('')+googleEvents.filter(e=>googleEventDate(e)===date).map(e=>`<div class="task">🔵 ${esc(e.summary||'제목 없음')} · 구글 캘린더</div>`).join('')+(!dayTasks.length&&!daySessions.length&&!googleEvents.some(e=>googleEventDate(e)===date)?'<p class="muted">이 날짜에 기록이 없어요.</p>':'')}
+$('prevMonth').onclick=()=>{monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()-1,1);renderCalendar();googleRefresh()};$('nextMonth').onclick=()=>{monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()+1,1);renderCalendar();googleRefresh()};$('todayMonth').onclick=()=>{monthCursor=new Date();selectedDay=localDay(new Date());renderCalendar();googleRefresh()};updateTimer();
+
+
+// MY LIFE OS v6: finance and record maintenance
+const money=n=>new Intl.NumberFormat('ko-KR').format(Number(n)||0)+'원';
+const finMonth=()=>`${finCursor.getFullYear()}-${pad(finCursor.getMonth()+1)}`;
+const finDay=()=>localDay(new Date());
+async function loadFinance(){
+  const [e,b,r]=await Promise.all([
+    call(db.from('finance_entries').select('*').order('entry_date',{ascending:false}).limit(5000)),
+    call(db.from('finance_budgets').select('*').order('category')),
+    call(db.from('finance_recurring').select('*').order('day_of_month'))
+  ]);
+  financeEntries=e||[];financeBudgets=b||[];financeRecurring=r||[];
+}
+async function refreshFinance(){await loadFinance();renderFinance()}
+function renderFinance(){
+  if(!user)return;
+  $('finMonthTitle').textContent=`${finCursor.getFullYear()}년 ${finCursor.getMonth()+1}월`;
+  const month=finMonth(),monthRows=financeEntries.filter(e=>e.entry_date?.startsWith(month));
+  const expenses=monthRows.filter(e=>e.kind==='expense'),income=monthRows.filter(e=>e.kind==='income');
+  const sum=rows=>rows.reduce((a,e)=>a+Number(e.amount),0);
+  $('finIncome').textContent=money(sum(income));$('finExpense').textContent=money(sum(expenses));
+  $('finBalance').textContent=money(sum(income)-sum(expenses));
+  $('finAssets').textContent=money(sum(financeEntries.filter(e=>e.kind==='asset')));
+  $('finEntryList').innerHTML=monthRows.filter(e=>e.kind!=='asset').map(e=>`<div class="task row"><div class="grow"><b>${esc(e.title)}</b><br><small>${esc(e.entry_date)} · ${esc(e.category)} · ${esc(e.payment_method||e.account||'')}</small>${e.memo?`<br><small>${esc(e.memo)}</small>`:''}</div><b class="finance-amount" style="color:${e.kind==='income'?'#387b65':'#ba628b'}">${e.kind==='income'?'+':'−'}${money(e.amount)}</b><button data-fin-delete="${e.id}" title="거래 삭제">삭제</button></div>`).join('')||'<p class="muted">이번 달 거래가 아직 없어요.</p>';
+  $('assetList').innerHTML=financeEntries.filter(e=>e.kind==='asset').map(e=>`<div class="task row"><div class="grow"><b>${esc(e.title)}</b><br><small>${esc(e.category)}</small></div><b>${money(e.amount)}</b><button data-fin-edit="${e.id}">금액 수정</button><button data-fin-delete="${e.id}">삭제</button></div>`).join('')||'<p class="muted">등록된 자산이 없어요.</p>';
+  $('recList').innerHTML=financeRecurring.map(r=>{
+    const date=month+'-'+pad(Math.min(r.day_of_month,new Date(finCursor.getFullYear(),finCursor.getMonth()+1,0).getDate()));
+    const paid=financeEntries.some(e=>e.kind==='expense'&&e.entry_date===date&&e.title===r.title&&Number(e.amount)===Number(r.amount));
+    return `<div class="task row"><div class="grow"><b>${esc(r.title)}</b><br><small>매월 ${r.day_of_month}일 · ${esc(r.category)} · ${money(r.amount)}</small></div><button data-rec-pay="${r.id}" ${paid?'disabled':''}>${paid?'✓ 기록됨':'지출로 기록'}</button><button data-rec-delete="${r.id}">삭제</button></div>`;
+  }).join('')||'<p class="muted">등록된 정기 지출이 없어요.</p>';
+  $('budgetList').innerHTML=financeBudgets.map(b=>{
+    const spent=sum(expenses.filter(e=>e.category===b.category)),pct=Number(b.monthly_budget)>0?Math.min(100,spent/Number(b.monthly_budget)*100):0;
+    return `<div class="task"><div class="row"><b class="grow">${esc(b.category)}</b><span>${money(spent)} / ${money(b.monthly_budget)}</span><button data-budget-delete="${b.id}">삭제</button></div><div class="finance-bar"><i style="width:${pct}%"></i></div><small>${Number(b.monthly_budget)>0?Math.round(spent/Number(b.monthly_budget)*100)+'% 사용':'예산 0원'}</small></div>`;
+  }).join('')||'<p class="muted">카테고리별 월간 예산을 등록해 보세요.</p>';
+}
+$('sessionAll').onchange=()=>document.querySelectorAll('.session-check').forEach(x=>x.checked=$('sessionAll').checked);
+$('sessionDelete').onclick=async()=>{
+  const ids=[...document.querySelectorAll('.session-check:checked')].map(x=>x.value);
+  if(!ids.length)return msg('삭제할 집중 기록을 먼저 선택하세요.',true);
+  if(!confirm(`선택한 집중 기록 ${ids.length}개를 삭제할까요?\n삭제하면 통계와 달력에서도 제외되며 복구할 수 없습니다.`))return;
+  try{await call(db.from('focus_sessions').delete().eq('user_id',user.id).in('id',ids));await load();msg(`집중 기록 ${ids.length}개를 삭제했어요.`)}
+  catch(e){msg('집중 기록 삭제 실패: '+e.message,true)}
+};
+$('finPrev').onclick=()=>{finCursor=new Date(finCursor.getFullYear(),finCursor.getMonth()-1,1);renderFinance()};
+$('finNext').onclick=()=>{finCursor=new Date(finCursor.getFullYear(),finCursor.getMonth()+1,1);renderFinance()};
+$('finDate').value=finDay();
+$('finTabs').querySelectorAll('[data-fin]').forEach(b=>b.onclick=()=>{
+  finPane=b.dataset.fin;
+  $('finTabs').querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));
+  ['entries','recurring','assets','budgets'].forEach(n=>document.getElementById('fin'+n[0].toUpperCase()+n.slice(1)+'Pane').classList.toggle('hidden',n!==finPane));
+});
+$('finEntryForm').onsubmit=async e=>{
+  e.preventDefault();
+  try{
+    await call(db.from('finance_entries').insert({user_id:user.id,entry_date:$('finDate').value,kind:$('finKind').value,title:$('finTitle').value.trim(),amount:Number($('finAmount').value),category:$('finCategory').value,payment_method:$('finPayment').value.trim(),account:$('finAccount').value.trim(),memo:$('finMemo').value.trim()}));
+    $('finEntryForm').reset();$('finDate').value=finDay();await refreshFinance();msg('거래를 저장했어요.');
+  }catch(err){msg('거래 저장 실패: '+err.message,true)}
+};
+$('finRecurringForm').onsubmit=async e=>{
+  e.preventDefault();
+  try{await call(db.from('finance_recurring').insert({user_id:user.id,title:$('recTitle').value.trim(),amount:Number($('recAmount').value),day_of_month:Number($('recDay').value),category:$('recCategory').value,account:$('recAccount').value.trim()}));$('finRecurringForm').reset();await refreshFinance();msg('정기 지출을 등록했어요.')}
+  catch(err){msg('정기 지출 저장 실패: '+err.message,true)}
+};
+$('finAssetForm').onsubmit=async e=>{
+  e.preventDefault();
+  try{await call(db.from('finance_entries').insert({user_id:user.id,entry_date:finDay(),kind:'asset',title:$('assetTitle').value.trim(),amount:Number($('assetAmount').value),category:$('assetCategory').value}));$('finAssetForm').reset();await refreshFinance();msg('자산을 등록했어요.')}
+  catch(err){msg('자산 저장 실패: '+err.message,true)}
+};
+$('finBudgetForm').onsubmit=async e=>{
+  e.preventDefault();
+  try{await call(db.from('finance_budgets').upsert({user_id:user.id,category:$('budgetCategory').value.trim(),monthly_budget:Number($('budgetAmount').value)},{onConflict:'user_id,category'}));$('finBudgetForm').reset();await refreshFinance();msg('월간 예산을 저장했어요.')}
+  catch(err){msg('예산 저장 실패: '+err.message,true)}
+};
+$('finance').addEventListener('click',async e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const del=b.dataset.finDelete,edit=b.dataset.finEdit,pay=b.dataset.recPay,rd=b.dataset.recDelete,bd=b.dataset.budgetDelete;
+  try{
+    if(del){if(!confirm('이 내역을 삭제할까요?'))return;await call(db.from('finance_entries').delete().eq('id',del).eq('user_id',user.id))}
+    else if(edit){const old=financeEntries.find(x=>x.id===edit);const input=prompt(`${old?.title||'자산'}의 현재 잔액을 입력하세요. 부채는 음수입니다.`,old?.amount);if(input===null)return;if(!input.trim()||!Number.isFinite(Number(input)))return msg('올바른 금액을 입력하세요.',true);await call(db.from('finance_entries').update({amount:Number(input),entry_date:finDay()}).eq('id',edit).eq('user_id',user.id))}
+    else if(pay){const r=financeRecurring.find(x=>x.id===pay);if(!r)return;const d=Math.min(r.day_of_month,new Date(finCursor.getFullYear(),finCursor.getMonth()+1,0).getDate());const date=finMonth()+'-'+pad(d);if(!confirm(`${date} ${r.title} ${money(r.amount)}을 실제 지출로 기록할까요?`))return;await call(db.from('finance_entries').insert({user_id:user.id,entry_date:date,kind:'expense',title:r.title,amount:r.amount,category:r.category,account:r.account}))}
+    else if(rd){if(!confirm('이 정기 지출 설정을 삭제할까요? 이미 기록한 지출은 유지돼요.'))return;await call(db.from('finance_recurring').delete().eq('id',rd).eq('user_id',user.id))}
+    else if(bd){if(!confirm('이 예산 항목을 삭제할까요?'))return;await call(db.from('finance_budgets').delete().eq('id',bd).eq('user_id',user.id))}
+    else return;
+    await refreshFinance();msg('변경 내용을 저장했어요.');
+  }catch(err){msg('처리 실패: '+err.message,true)}
+});
+
+
+// Google Calendar OAuth: browser-only, no tokens sent to Supabase.
+const googleEventDate=e=>(e.start?.date||e.start?.dateTime?.slice(0,10)||'');
+const googleStatus=t=>$('googleStatus').textContent=t;
+const googleOriginOk=()=>location.protocol==='https:'||location.hostname==='localhost'||location.hostname==='127.0.0.1';
+const googleKey=()=>`my_life_os_google_client_${user?.id||'local'}`;
+const googleId=()=>$('googleClientId').value.trim();
+function googleInit(){
+ $('googleClientId').value=localStorage.getItem(googleKey())||'';
+ googleStatus(googleOriginOk()?'구글 계정 연결 버튼을 눌러 주세요.':'현재 파일 실행 방식에서는 구글 연결이 불가능합니다. GitHub Pages 등 HTTPS 주소로 실행해 주세요.');
+}
+function googleAuth(){
+ return new Promise((resolve,reject)=>{
+  if(!googleOriginOk())return reject(Error('file:// 방식에서는 구글 OAuth를 사용할 수 없습니다. HTTPS 사이트에서 실행해 주세요.'));
+  if(!googleId())return reject(Error('Google OAuth 클라이언트 ID를 먼저 입력하고 저장해 주세요.'));
+  if(!window.google?.accounts?.oauth2)return reject(Error('구글 인증 라이브러리를 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.'));
+  if(googleToken&&Date.now()<googleTokenExpiry-60000)return resolve(googleToken);
+  googleTokenClient=google.accounts.oauth2.initTokenClient({client_id:googleId(),scope:'https://www.googleapis.com/auth/calendar.events',callback:r=>{
+   if(r.error)return reject(Error(r.error_description||r.error));
+   googleToken=r.access_token;googleTokenExpiry=Date.now()+(Number(r.expires_in)||3600)*1000;
+   googleStatus('구글 캘린더 연결됨 · 이 브라우저에서 앱이 열려 있는 동안 동기화할 수 있어요.');resolve(googleToken);
+  },error_callback:r=>reject(Error(r.message||r.type||'구글 인증이 취소되었습니다.'))});
+  googleTokenClient.requestAccessToken({prompt:googleToken?'':'consent'});
+ });
+}
+async function googleApi(path,method='GET',body){
+ const token=await googleAuth();
+ const res=await fetch('https://www.googleapis.com/calendar/v3'+path,{method,headers:{Authorization:'Bearer '+token,...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});
+ if(!res.ok){const err=await res.json().catch(()=>({}));throw Error(err.error?.message||'구글 API 오류 '+res.status)}
+ return res.status===204?null:res.json();
+}
+async function googleRefresh(){
+ if(!googleToken||Date.now()>googleTokenExpiry-60000){googleStatus('구글 연결이 필요해요. 연결 버튼을 다시 눌러 주세요.');return}
+ try{
+  const from=new Date(monthCursor.getFullYear(),monthCursor.getMonth(),1),to=new Date(monthCursor.getFullYear(),monthCursor.getMonth()+1,1);
+  let all=[],page='';do{
+   const params=new URLSearchParams({timeMin:from.toISOString(),timeMax:to.toISOString(),singleEvents:'true',orderBy:'startTime',maxResults:'250'});
+   if(page)params.set('pageToken',page);
+   const r=await googleApi('/calendars/primary/events?'+params);
+   all.push(...(r.items||[]));page=r.nextPageToken||'';
+  }while(page&&all.length<1000);
+  googleEvents=all;renderGoogleEvents();renderCalendar();googleStatus('동기화 완료 · '+new Date().toLocaleTimeString('ko-KR')+' · '+all.length+'개 일정');
+ }catch(e){googleStatus('동기화 실패: '+e.message)}
+}
+function googleInputDate(v){if(!v)return '';const d=new Date(v);const local=new Date(d.getTime()-d.getTimezoneOffset()*60000);return local.toISOString().slice(0,16)}
+function renderGoogleEvents(){
+ $('googleEventList').innerHTML=googleEvents.map(e=>`<div class="task row"><div class="grow"><b>${esc(e.summary||'제목 없음')}</b><br><small>${esc(e.start?.date||new Date(e.start?.dateTime).toLocaleString('ko-KR'))}</small></div><button data-google-edit="${esc(e.id)}">수정</button><button data-google-delete="${esc(e.id)}">삭제</button></div>`).join('')||'<p class="muted">이 달의 구글 일정이 없어요.</p>';
+}
+function googleClearForm(){$('googleEventForm').reset();$('googleEventId').value='';$('googleEventForm').querySelector('button[type=submit]').textContent='구글 캘린더에 일정 저장'}
+$('googleSaveClient').onclick=()=>{if(!googleId())return googleStatus('클라이언트 ID를 입력해 주세요.');localStorage.setItem(googleKey(),googleId());googleStatus('클라이언트 ID를 저장했어요. 이제 구글 계정 연결을 눌러 주세요.')};
+$('googleConnect').onclick=async()=>{try{await googleAuth();await googleRefresh()}catch(e){googleStatus('연결 실패: '+e.message)}};
+$('googleRefresh').onclick=async()=>{try{if(!googleToken)await googleAuth();await googleRefresh()}catch(e){googleStatus('동기화 실패: '+e.message)}};
+$('googleDisconnect').onclick=()=>{if(googleToken&&window.google?.accounts?.oauth2)google.accounts.oauth2.revoke(googleToken,()=>{});googleToken=null;googleTokenExpiry=0;googleEvents=[];renderGoogleEvents();renderCalendar();googleStatus('연결을 해제했어요. 구글 일정은 삭제되지 않았어요.')};
+$('googleEventCancel').onclick=googleClearForm;
+$('googleEventForm').onsubmit=async e=>{
+ e.preventDefault();const start=$('googleEventStart').value,end=$('googleEventEnd').value;
+ if(new Date(end)<=new Date(start))return googleStatus('종료 시간이 시작 시간보다 늦어야 해요.');
+ const body={summary:$('googleEventTitle').value.trim(),description:$('googleEventDescription').value,start:{dateTime:new Date(start).toISOString()},end:{dateTime:new Date(end).toISOString()}};
+ try{const id=$('googleEventId').value;await googleApi('/calendars/primary/events'+(id?'/'+encodeURIComponent(id):''),id?'PATCH':'POST',body);googleClearForm();await googleRefresh();googleStatus('구글 캘린더에 일정이 저장됐어요.')}
+ catch(err){googleStatus('일정 저장 실패: '+err.message)}
+};
+$('googleEventList').onclick=async e=>{
+ const b=e.target.closest('button');if(!b)return;
+ const id=b.dataset.googleEdit||b.dataset.googleDelete,ev=googleEvents.find(x=>x.id===id);if(!ev)return;
+ if(b.dataset.googleEdit){$('googleEventId').value=id;$('googleEventTitle').value=ev.summary||'';$('googleEventDescription').value=ev.description||'';$('googleEventStart').value=googleInputDate(ev.start?.dateTime||ev.start?.date);$('googleEventEnd').value=googleInputDate(ev.end?.dateTime||ev.end?.date);$('googleEventForm').querySelector('button[type=submit]').textContent='수정 내용 구글에 저장';$('googleEventTitle').focus();return}
+ if(!confirm('구글 캘린더에서도 이 일정을 삭제할까요?'))return;
+ try{await googleApi('/calendars/primary/events/'+encodeURIComponent(id),'DELETE');await googleRefresh();googleStatus('구글 캘린더에서 일정을 삭제했어요.')}
+ catch(err){googleStatus('일정 삭제 실패: '+err.message)}
+};
+const oldGoogleLoad=load;
+load=async function(){await oldGoogleLoad();if(user){googleInit();if(googleToken)await googleRefresh()}};
+setInterval(()=>{if(user&&googleToken&&document.visibilityState==='visible')googleRefresh()},5*60*1000);
 
 db.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>syncUser(session?.user||null),0)});
 const {data:{session}}=await db.auth.getSession();await syncUser(session?.user||null);
